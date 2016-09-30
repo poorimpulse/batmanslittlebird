@@ -1,0 +1,12 @@
+{{ partial "header" . }}
+<ul class="episodeList">
+{{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
+{{ if eq $index 0 }}
+<script>function firstEpisode() {
+    attachAudio("{{ $element.UniqueID }}", "{{ $element.Params.episode_url }}", "{{ $element.Params.episode_duration }}");
+}</script>
+{{ end }}
+<li id="episode-{{ $element.UniqueID }}"{{ if eq $index 0 }} class="latest" {{ end }}>{{ $element.Render "details" }}</li>
+{{ end }}
+</ul>
+{{ partial "footer" . }}

@@ -1,0 +1,10 @@
+baseurl = "http://batmanslittlebird.com/"
+googleAnalytics = "UA-123-45"
+languageCode = "en-us"
+title = "Batman's Little Bird"
+theme = "blb"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = -100

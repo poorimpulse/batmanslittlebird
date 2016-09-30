@@ -1,0 +1,64 @@
+@import "reset";
+@import "color";
+
+$episodeTitleSize: 1.5rem;
+$episodeTitleLineHeight: $episodeTitleSize * 1.5;
+$pageWidth: 960px;
+
+body {
+  background: get-color(neutral, light);
+}
+
+#headerContainer {
+  height: 10em;
+  max-width: $pageWidth;
+  margin: auto;
+  padding: 2em 0;
+}
+
+#sectionContainer {
+  max-width: $pageWidth;
+  margin: auto;
+
+  li {
+    transition: height 1s;
+  }
+}
+
+#footer {
+  background: get-color(neutral, dark);
+  padding: 1em 0;
+  margin-top: 2em;
+
+  a {
+    color: get-color(neutral, light);
+  }
+}
+
+nav.main {
+  max-width: $pageWidth;
+  margin: auto;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.episode {
+  overflow: hidden;
+  height: $episodeTitleLineHeight;
+
+  h2 {
+    font-size: $episodeTitleSize;
+    line-height: $episodeTitleLineHeight;
+  }
+
+  audio {
+    width: 100%;
+  }
+}
+
+.latest .episode {
+  height: inherit;
+}

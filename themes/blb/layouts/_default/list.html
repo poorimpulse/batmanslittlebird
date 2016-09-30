@@ -1,0 +1,7 @@
+{{ partial "header" . }}
+<ul>
+    {{ range .Data.Pages.ByDate.Reverse }}
+    {{ .Render "li" }}
+    {{ end }}
+</ul>
+{{ partial "footer" . }}

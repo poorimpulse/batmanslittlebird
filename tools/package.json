@@ -1,0 +1,27 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "colorguard": "^1.2.0",
+    "cssnano": "^3.7.3",
+    "doiuse": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.9",
+    "postcss": "^5.1.2",
+    "postcss-flexbugs-fixes": "^2.0.0",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-responsive-images": "^1.0.3"
+  }
+}

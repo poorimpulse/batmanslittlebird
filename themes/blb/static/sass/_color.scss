@@ -1,0 +1,36 @@
+$base-color-a: adjust-hue(#1EA9FE, 30%);
+$base-color-b: adjust-hue($base-color-a, 180%);
+
+$primary-color: mix($base-color-a, $base-color-b, 97%);
+$secondary-color: mix($base-color-b, $base-color-a, 95%);
+$neutral-color: mix($base-color-a, $base-color-b, 55%);
+$white-color: lighten($neutral-color, 40%);
+$black-color: darken($neutral-color, 40%);
+
+$primary-light: lighten($primary-color, 35%);
+$primary-dark: darken($primary-color, 25%);
+
+$secondary-light: lighten($secondary-color, 25%);
+$secondary-dark: darken($secondary-color, 25%);
+
+@function get-color($main, $tone) {
+  @return map-get(map-get($colors, $main), $tone);
+}
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: $primary-light,
+    dark: $primary-dark
+  ),
+  secondary: (
+    base: $secondary-color,
+    light: $secondary-light,
+    dark: $secondary-dark
+  ),
+  neutral: (
+    base: $neutral-color,
+    light: $white-color,
+    dark: $black-color
+  )
+);
