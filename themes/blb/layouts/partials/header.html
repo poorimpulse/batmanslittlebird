@@ -1,8 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ .Title }}</title>
+    <title>{{ .Title | default "Batman's Little Bird - A comicbook podcast" }} </title>
     <link rel="stylesheet" href="/css/main.css">
+    <meta charset="utf-8">
+    <meta name="keywords" content="nightwing robin dick grayson podcast batman comic comicbook">
+    {{ if isset . "Summary" }}
+    <meta name="description" content="{{ .Summary }}">
+    {{ else }}
+    <meta name="description" content="A podcast with two friends from high school talking about Dick Grayson and why he's the best">
+    {{ end }}
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Batman's Little Bird",
+        "email": "something@gmail.com",
+        "url": "http://batmanslittlebird.com",
+        "logo": "http://placehold.it/350x350",
+        "sameAs": [
+          "http://twitter.com/bmansltlbird",
+          "http://ituneslink",
+          "http://overcastlink",
+          "http://googleplaylink",
+          "http://patreonlink"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Batman's Little Bird",
+        "url": "http://batmanslittlebird.com"
+    }
+    </script>
 </head>
 <body>
 <div id="headerContainer">

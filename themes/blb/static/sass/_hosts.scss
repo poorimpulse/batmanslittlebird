@@ -1,0 +1,29 @@
+.hosts {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+
+  .hostProfile {
+    margin-right: 8em;
+    flex: 1;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

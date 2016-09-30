@@ -1,12 +1,19 @@
+{{ $.Scratch.Add "HasAudio" true }}
 {{ partial "header" . }}
+<div id="episodeHeroContainer"><div id="episodeHeroViewport">
+    <div class="heroUnit">Welcome</div>
+{{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
+    <div class="heroUnit"
+         id="hero-{{ $element.UniqueID }}"
+         data-index="{{ $index }}">{{ $element.Render "hero" }}</div>
+{{ end }}
+</div></div>
+<div id="audioBlock"><audio preload></audio></div>
 <ul class="episodeList">
 {{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
-{{ if eq $index 0 }}
-<script>function firstEpisode() {
-    attachAudio("{{ $element.UniqueID }}", "{{ $element.Params.episode_url }}", "{{ $element.Params.episode_duration }}");
-}</script>
-{{ end }}
-<li id="episode-{{ $element.UniqueID }}"{{ if eq $index 0 }} class="latest" {{ end }}>{{ $element.Render "details" }}</li>
+<li
+    class="episodeLink" data-id="{{ $element.UniqueID }}" data-src="{{ $element.Params.episode_url }}"
+    id="episode-{{ $element.UniqueID }}">{{ $element.Render "li" }}</li>
 {{ end }}
 </ul>
 {{ partial "footer" . }}

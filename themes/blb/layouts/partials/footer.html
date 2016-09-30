@@ -4,14 +4,17 @@
         <ul>
             {{ $currentNode := . }}
             {{ range .Site.Menus.main }}
-            <li{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} class="active"{{end}} >
+            <li{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} class="currentPage"{{end}} >
             <a href="{{.URL}}">{{ .Name }}</a>
             </li>
             {{ end }}
         </ul>
     </nav>
 </div>
+{{ if $.Scratch.Get "HasAudio" }}
+<script src="/audiojs/audio.min.js"></script>
 <script src="/js/app.js"></script>
+{{ end }}
 {{ template "_internal/google_analytics.html" . }}
 </body>
 </html>

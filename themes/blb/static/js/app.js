@@ -1,48 +1,54 @@
-function attachAudio(id, url, duration) {
-  var element = document.querySelector("#episode-" + id + " audio");
-  element.src = url;
-  element.duration = duration;
-}
+(function() {
+  var currentEpisode = null;
+  var audio = null;
+  audiojs.events.ready(function () {
+    audio = audiojs.create(document.getElementsByTagName('audio')[0], {
 
-(function () {
-  var selectedEpisodeId = null;
-
-  function hideEpisode(element) {
-    if (!element) {
-      return;
-    }
-
-    element.className = "";
-  }
-
-  function showEpisode(element) {
-    element.className = 'latest';
-  }
-
-  function handleClick(link) {
-    var id = link.dataset.id;
-    var url = link.dataset.audio;
-    var duration = link.dataset.duration;
-    var previousElement = document.getElementById('episode-'+selectedEpisodeId);
-    var element = document.getElementById('episode-'+id);
-
-    if (!previousElement) {
-      previousElement = document.getElementsByClassName('latest')[0];
-    }
-
-    hideEpisode(previousElement);
-    showEpisode(element);
-    attachAudio(id, url, duration);
-    selectedEpisodeId = id;
-  }
-
-  var episodeLinks = document.getElementsByClassName('episodeLink');
-  firstEpisode();
-  Array.prototype.forEach.call(episodeLinks,
-    function (x) {
-      x.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        handleClick(evt.target);
-      });
+    });
   });
+
+  function handleClick(element) {
+    var id = element.dataset.id;
+    showEpisode(id);
+    setHeroUnit(id);
+    // audio.load(element.dataset.src);
+    // audio.play();
+  }
+
+  function unhighlightCurrentEpisode() {
+    var item = document.querySelector('li.active');
+    if (item) {
+      item.className = '';
+    }
+  }
+
+  function setHeroUnit(id) {
+    var heroElement = document.getElementById('hero-' + id);
+    var index = parseInt(heroElement.dataset.index);
+    var heroViewport = heroElement.parentElement;
+    var offset = (index+1) * 250;
+    heroViewport.style.top = "" + (-offset + 16) + "px";
+  }
+
+  function showEpisode(id) {
+    var linkElement = document.getElementById('episode-' + id);
+    if (!currentEpisode) {
+      unhighlightCurrentEpisode();
+    } else {
+      currentEpisode.className = '';
+    }
+
+    linkElement.className = 'active';
+    currentEpisode = linkElement;
+  }
+
+  Array.prototype.forEach.call(
+    document.getElementsByClassName('episodeLink'),
+    function(element) {
+      element.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        handleClick(element);
+      });
+    }
+  );
 })();

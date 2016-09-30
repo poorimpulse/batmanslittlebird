@@ -195,23 +195,40 @@ input[type=button] {
   clear: both; }
 
 body {
-  background: #f3f3f5; }
+  background: #f3f3f5;
+  min-height: 100vh;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
+  justify-content: space-between; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-variant: small-caps; }
+
+a {
+  color: #253ef7;
+  font-variant: small-caps; }
 
 #headerContainer {
-  height: 10em;
+  height: 8em;
+  width: 100%;
   max-width: 960px;
-  margin: auto;
-  padding: 2em 0; }
+  margin: 0 auto 2em auto;
+  border-bottom: 2px solid #f3db29; }
+  #headerContainer h1 {
+    font-size: 5em;
+    margin: 0; }
 
 #sectionContainer {
+  width: 100%;
   max-width: 960px;
-  margin: auto; }
-  #sectionContainer li {
-    transition: height 1s; }
+  margin: auto;
+  flex: 2; }
 
 #footer {
   background: #24252c;
-  padding: 1em 0;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   margin-top: 2em; }
   #footer a {
     color: #f3f3f5; }
@@ -221,18 +238,172 @@ nav.main {
   margin: auto; }
   nav.main ul {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-between; }
+    nav.main ul .currentPage {
+      background: #948408;
+      color: #f3f3f5; }
+      nav.main ul .currentPage a:hover {
+        background: none; }
+    nav.main ul li {
+      border-radius: 2px; }
+      nav.main ul li a {
+        padding: 1em;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        text-transform: uppercase; }
+        nav.main ul li a:hover {
+          background: #061797; }
+
+.episodeList li {
+  border-bottom: 1px solid #f3db29; }
+  .episodeList li:last-of-type {
+    border-bottom: 0; }
 
 .episode {
-  overflow: hidden;
-  height: 2.25rem; }
+  padding: 0.25em 1em;
+  cursor: pointer; }
+  .episode:hover {
+    background: #faefa2; }
+  .episode a {
+    text-decoration: none;
+    font-variant: normal;
+    color: #24252c; }
+  .episode header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; }
   .episode h2 {
-    font-size: 1.5rem;
-    line-height: 2.25rem; }
-  .episode audio {
-    width: 100%; }
+    font-size: 1rem;
+    line-height: 1.5rem; }
 
 .latest .episode {
-  height: inherit; }
+  margin: 1.5em 0; }
+
+#audioBlock {
+  margin: 1.5em auto;
+  width: 460px; }
+
+#episodeHeroContainer {
+  height: 250px;
+  border-left: 2px solid #061797;
+  border-right: 2px solid #061797;
+  padding: 1em;
+  overflow: hidden;
+  position: relative; }
+  #episodeHeroContainer #episodeHeroViewport {
+    position: absolute;
+    top: 1em;
+    transition: top 1s ease; }
+  #episodeHeroContainer .heroUnit {
+    height: 250px; }
+
+.active {
+  background: #d1d6fd; }
+
+.page {
+  margin: 1em; }
+  .page > header > h1 {
+    font-size: 3rem; }
+  .page h2 {
+    font-size: 1.5em;
+    line-height: 1.5em; }
+  .page p {
+    margin-bottom: 1.5em;
+    line-height: 1.5em; }
+
+.hosts {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between; }
+  .hosts .hostProfile {
+    margin-right: 8em;
+    flex: 1; }
+    .hosts .hostProfile:last-of-type {
+      margin-right: 0; }
+    .hosts .hostProfile header {
+      position: relative;
+      width: 100%;
+      text-align: center; }
+      .hosts .hostProfile header img {
+        border-radius: 50%; }
+      .hosts .hostProfile header h1 {
+        font-size: 2em;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+
+#contactListContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+
+.individualContactList {
+  min-width: 50%; }
+  .individualContactList p {
+    margin: 2em 0; }
+  .individualContactList h1 {
+    font-size: 1.5em; }
+
+.contactList {
+  margin-bottom: 2em; }
+  .contactList .label {
+    display: inline-block;
+    width: 3.25em;
+    text-align: right;
+    margin-right: 0.5em;
+    font-weight: bold;
+    font-variant: small-caps; }
+
+#audioBlock .audiojs {
+  background: #24252c; }
+  #audioBlock .audiojs .time {
+    color: #f3f3f5; }
+    #audioBlock .audiojs .time .played {
+      color: #d1d6fd; }
+  #audioBlock .audiojs .error-message {
+    color: #faefa2; }
+
+@media screen and (max-width: 320px) {
+  .audiojs .scrubber {
+    width: 200px !important; } }
+@media screen and (max-width: 360px) {
+  #episodeHeroContainer {
+    display: none; }
+
+  #headerContainer {
+    height: inherit;
+    background: #24252c;
+    color: #f3f3f5; }
+
+  #audioBlock {
+    width: 100% !important;
+    padding: 0 1em !important; }
+    #audioBlock .audiojs {
+      width: 100%; }
+
+  .time {
+    display: none; }
+
+  body {
+    position: relative; }
+
+  #footer {
+    font-size: 0.75em; }
+
+  .releaseDate {
+    display: none; }
+
+  #headerContainer h1 {
+    font-size: 2rem; }
+
+  .page header h1 {
+    font-size: 2rem; }
+
+  #contactListContainer {
+    display: inherit; }
+
+  body {
+    display: inherit; } }
 
 /*# sourceMappingURL=main.css.map */

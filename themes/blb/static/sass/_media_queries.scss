@@ -1,0 +1,64 @@
+$super-small-break: 320px;
+$small-break: 360px;
+$large-break: 1200px;
+
+@media screen and (max-width: $super-small-break) {
+  .audiojs .scrubber {
+    width: 200px !important;
+  }
+}
+
+@media screen and (max-width: $small-break) {
+
+  #episodeHeroContainer {
+      display: none;
+  }
+
+  #headerContainer {
+      height: inherit;
+      background: get-color(neutral, dark);
+      color: get-color(neutral, light);
+  }
+
+  #audioBlock {
+      width: 100% !important;
+      padding: 0 1em !important;
+
+      .audiojs {
+        width: 100%;
+
+      }
+  }
+
+  .time {
+      display: none;
+  }
+
+  body { position: relative; }
+
+  #footer {
+    //position: absolute;
+    //bottom: 0;
+    //width: 100%;
+    font-size: 0.75em;
+  }
+
+  .releaseDate { display: none; }
+
+
+  #headerContainer h1 {
+    font-size: 2rem;
+  }
+
+  .page header h1 {
+    font-size: 2rem;
+  }
+
+  #contactListContainer {
+    display: inherit;
+  }
+
+  body {
+    display: inherit;
+  }
+}
