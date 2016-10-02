@@ -1,6 +1,6 @@
 +++
 type = "page"
-title = "Contact Us"
+title = "Contact"
 menu = "main"
 +++
 
