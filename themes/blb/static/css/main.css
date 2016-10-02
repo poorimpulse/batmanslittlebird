@@ -301,6 +301,9 @@ nav.main {
     #episodeHeroContainer .heroUnit h1 {
       font-weight: bold;
       margin-bottom: 1.5em; }
+    #episodeHeroContainer .heroUnit p {
+      line-height: 1.5em;
+      margin-bottom: 1.5em; }
 
 .active {
   background: #d1d6fd; }
