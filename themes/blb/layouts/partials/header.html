@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ .Title | default "Batman's Little Bird - A comicbook podcast" }} </title>
+    <title>{{ .Title | default "Batman's Little Bird - A comicbook podcast" }}{{ if .Title }} • Batman's Little Bird Podcast{{ end }}</title>
     <link rel="stylesheet" href="/css/main.css">
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
