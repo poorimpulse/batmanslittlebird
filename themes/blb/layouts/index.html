@@ -1,7 +1,11 @@
 {{ $.Scratch.Add "HasAudio" true }}
 {{ partial "header" . }}
 <div id="episodeHeroContainer"><div id="episodeHeroViewport">
-    <div class="heroUnit">Welcome</div>
+    <div class="heroUnit">
+        <header><h1>Welcome</h1></header>
+        <p>Two friends from high school come together to discuss why Dick Grayson is rad.</p>
+        <p>Click on an episode below to listen.</p>
+    </div>
 {{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
     <div class="heroUnit"
          id="hero-{{ $element.UniqueID }}"

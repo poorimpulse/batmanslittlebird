@@ -24,7 +24,6 @@ a {
   font-variant: small-caps;
 }
 
-
 #headerContainer {
   height: 8em;
   width: 100%;
@@ -153,6 +152,11 @@ audio, .audiojs {
 
   .heroUnit {
     height: 250px;
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 1.5em;
+    }
   }
 }
 

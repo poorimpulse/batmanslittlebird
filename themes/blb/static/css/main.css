@@ -298,6 +298,9 @@ nav.main {
     transition: top 1s ease; }
   #episodeHeroContainer .heroUnit {
     height: 250px; }
+    #episodeHeroContainer .heroUnit h1 {
+      font-weight: bold;
+      margin-bottom: 1.5em; }
 
 .active {
   background: #d1d6fd; }
