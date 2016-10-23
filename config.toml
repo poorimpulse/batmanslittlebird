@@ -4,6 +4,9 @@ languageCode = "en-us"
 title = "Batman's Little Bird"
 theme = "blb"
 
+[author]
+  name = "Eric & Russell"
+
 [[menu.main]]
   name = "Home"
   url = "/"
