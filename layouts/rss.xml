@@ -31,6 +31,9 @@
       <description>
         {{ .Content | html }}
       </description>
+      <itunes:summary>
+        <![CDATA[{{ .Content | html }}]]>
+      </itunes:summary>
       <enclosure url="{{ .Params.episode.url }}" length="{{ .Params.episode.size }}" type="audio/mpeg" />
       <itunes:author>{{ if .Params.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
       <itunes:explicit>{{ if .Params.explicit }}Yes{{ else }}No{{ end }}</itunes:explicit>
