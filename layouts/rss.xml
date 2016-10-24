@@ -2,7 +2,7 @@
   <channel>
     <title>{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Recent content {{ with .Title }}in {{.}} {{ end }}on {{ .Site.Title }}</description>
+    <description>{{ .Site.Params.summary }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
@@ -10,17 +10,18 @@
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     <atom:link href="{{ .URL }}" rel="self" type="application/rss+xml" />
-    <itunes:author>Poor Impulse, Co.</itunes:author>
-    <itunes:subtitle>An audiobook podcast of ambition people with poor impulse control</itunes:subtitle>
-    <itunes:summary>A monthly audiobook podcast that transforms roleplaying games into an ongoing saga</itunes:summary>
+    <itunes:author>{{ .Site.Author.name }}</itunes:author>
+    <itunes:subtitle>{{ .Site.Params.subtitle }}</itunes:subtitle>
+    <itunes:summary>{{ .Site.Params.summary }}</itunes:summary>
     <itunes:owner>
-      <itunes:name>Russell Hay</itunes:name>
+      <itunes:name>Eric Fontenot &amp; Russell Hay</itunes:name>
       <itunes:email>russell.hay@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="http://poorimpulse.co/itunes_logo.png"/>
-    <itunes:explicit>No</itunes:explicit>
-    <itunes:category text="Comedy" />
-    {{ range first 15 (where .Data.Pages "Type" "episode") }}
+    <itunes:image href="{{ .Site.Params.coverart }}"/>
+    <itunes:explicit>No</itunes:explicit>{{ range .Site.Params.category }}
+    <itunes:category text="{{ .name }}">{{ if .subcategory }}
+      <itunes:category text="{{ .subcategory }}" />
+    {{end}}</itunes:category>{{ end }}{{ range (where .Data.Pages "Type" "episode") }}
     <item>
       <title>{{ .Title }} - {{ .Params.episode_title }}</title>
       <link>{{ .Permalink }}</link>

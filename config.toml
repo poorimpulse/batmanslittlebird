@@ -4,8 +4,24 @@ languageCode = "en-us"
 title = "Batman's Little Bird"
 theme = "blb"
 
+[params]
+    coverart = "http://poorimpulse.co/coverart.png"
+    subtitle = "A podcast about Dick"
+    summary = "A podcast dedicated to the boy wonder, Dick Grayson where we talk about his history, and go through every comic he appears in"
+
 [author]
   name = "Eric & Russell"
+
+[[params.category]]
+name="Arts"
+subcategory="Visual Arts"
+
+[[params.category]]
+name="Comedy"
+
+[[params.category]]
+name="Games &amp; Hobbies"
+subcategory="Hobbies"
 
 [[menu.main]]
   name = "Home"
