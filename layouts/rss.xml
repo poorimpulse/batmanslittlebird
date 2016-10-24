@@ -23,16 +23,16 @@
       <itunes:category text="{{ .subcategory }}" />
     {{end}}</itunes:category>{{ end }}{{ range (where .Data.Pages "Type" "episode") }}
     <item>
-      <title>{{ .Title }} - {{ .Params.episode_title }}</title>
+      <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-      <guid>{{ .Params.guid }}</guid>
+      <guid>{{ .Params.episode.guid }}</guid>
       <description>
         {{ .Content | html }}
       </description>
       <itunes:summary>
-        <![CDATA[{{ .Content | html }}]]>
+        {{ .Content | html }}
       </itunes:summary>
       <enclosure url="{{ .Params.episode.url }}" length="{{ .Params.episode.size }}" type="audio/mpeg" />
       <itunes:author>{{ if .Params.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
