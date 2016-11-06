@@ -1,4 +1,6 @@
 <article class="episode list">
     <header><h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <h3 class="releaseDate">{{ .Date.Format "01 Jan 2006" }}</h3></header>
+        <h3 class="releaseDate">{{ .Date.Format "01 Jan 2006" }}</h3>
+    <div class="audio-control"><a class="play-button" data-url="{{ .Params.episode.url }}"><i class="fa fa-play-circle fa-fw fa-lg"></i></a></div>
+    </header>
 </article>

@@ -98,76 +98,6 @@ nav.main {
 
 }
 
-.episode {
-  padding: 0.25em 1em;
-  cursor: pointer;
-
-  &:hover {
-    background: get-color(secondary, light);
-  }
-
-  a {
-    text-decoration: none;
-    font-variant: normal;
-    color: get-color(neutral, dark);
-  }
-
-  header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
-  h2 {
-    font-size: $episodeTitleSize;
-    line-height: $episodeTitleLineHeight;
-  }
-}
-
-audio, .audiojs {
-}
-
-.latest .episode {
-  margin: 1.5em 0;
-}
-
-#audioBlock {
-  margin: 1.5em auto;
-  width: 460px;
-}
-
-#episodeHeroContainer {
-  height: 250px;
-  border-left: 2px solid get-color(primary, dark);
-  border-right: 2px solid get-color(primary, dark);
-  padding: 1em;
-  overflow: hidden;
-  position: relative;
-
-  #episodeHeroViewport {
-    position: absolute;
-    top: 1em;
-    transition: top 1s ease;
-  }
-
-  .heroUnit {
-    height: 250px;
-
-    h1 {
-      font-weight: bold;
-      margin-bottom: 1.5em;
-    }
-
-    p {
-      line-height: 1.5em;
-      margin-bottom: 1.5em;
-    }
-  }
-}
-
-.active {
-  background: get-color(primary, light);
-}
 
 .page {
   margin: 1em;
@@ -189,7 +119,8 @@ audio, .audiojs {
   }
 }
 
+@import "homepage";
 @import "hosts";
 @import "contact";
-@import "audiojs";
+@import "audio";
 @import "media_queries";

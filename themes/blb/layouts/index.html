@@ -1,23 +1,23 @@
-{{ $.Scratch.Add "HasAudio" true }}
+<!--{{ $.Scratch.Add "HasAudio" true }}-->
 {{ partial "header" . }}
-<div id="episodeHeroContainer"><div id="episodeHeroViewport">
-    <div class="heroUnit">
-        <header><h1>Welcome</h1></header>
-        <p>Two friends from high school come together to discuss why Dick Grayson is rad.</p>
-        <p>Click on an episode below to listen.</p>
+<div id="homepageContainer">
+    <div class="titleUnit"><img src="/images/littlebirds.jpg"></div>
+    <div class="episodeList">
+        <p><strong>Batman's Little Bird</strong> is two friends from High School, all grown up, talking about
+        Dick Grayson and why he's simply the best, and not the worst. We cover comics, tv shows, movies, and lament
+        the lack of a good Dick Grayson in the cinematic universe.</p>
+        <ul class="episodeList">
+            {{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
+            {{ $.Scratch.Add "HasEpisodes" true }}
+            <li
+                    class="episodeLink" data-id="{{ $element.UniqueID }}" data-src="{{ $element.Params.episode_url }}"
+                    id="episode-{{ $element.UniqueID }}">{{ $element.Render "li" }}</li>
+            {{ end }}
+            {{ if not ($.Scratch.Get "HasEpisodes") }}
+            <li>No Episodes Published Yet</li>
+            {{ end }}
+            <audio id="player"></audio>
+        </ul>
     </div>
-{{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
-    <div class="heroUnit"
-         id="hero-{{ $element.UniqueID }}"
-         data-index="{{ $index }}">{{ $element.Render "hero" }}</div>
-{{ end }}
-</div></div>
-<div id="audioBlock"><audio preload></audio></div>
-<ul class="episodeList">
-{{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
-<li
-    class="episodeLink" data-id="{{ $element.UniqueID }}" data-src="{{ $element.Params.episode_url }}"
-    id="episode-{{ $element.UniqueID }}">{{ $element.Render "li" }}</li>
-{{ end }}
-</ul>
+</div>
 {{ partial "footer" . }}

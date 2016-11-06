@@ -1,0 +1,59 @@
+.episode {
+  padding: 0.25em 1em;
+  cursor: pointer;
+
+  &:hover {
+    background: get-color(secondary, light);
+
+    & .play-button {
+      // Color SVG play button
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-variant: normal;
+    color: get-color(neutral, dark);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: $episodeTitleSize;
+    line-height: $episodeTitleLineHeight;
+  }
+}
+
+#homepageContainer {
+  margin-top: 2rem;
+  display: flex;
+
+  .titleUnit {
+    flex: 1;
+    max-width: 33%;
+    img {
+      max-width: 100%;
+    }
+    margin-right: 2rem;
+  }
+
+  div.episodeList {
+    flex: 2;
+  }
+
+  ul.episodeList {
+    margin-top: 2rem;
+  }
+}
+
+.latest .episode {
+  margin: 1.5em 0;
+}
+
+.active {
+  background: get-color(primary, light);
+}
