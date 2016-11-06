@@ -211,6 +211,10 @@ a {
   color: #253ef7;
   font-variant: small-caps; }
 
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.5em; }
+
 #headerContainer {
   height: 8em;
   width: 100%;
@@ -276,9 +280,14 @@ nav.main {
   .page h2 {
     font-size: 1.5em;
     line-height: 1.5em; }
-  .page p {
-    margin-bottom: 1.5em;
-    line-height: 1.5em; }
+
+.callToAction {
+  background: #d1d6fd;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  padding: 1.25em;
+  border-radius: 2px;
+  box-shadow: inset 0 0 3px 0 #b9c1fc; }
 
 .episode {
   padding: 0.25em 1em;
