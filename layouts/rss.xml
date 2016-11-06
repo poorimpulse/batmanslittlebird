@@ -35,8 +35,8 @@
         {{ .Content | html }}
       </itunes:summary>
       <enclosure url="{{ .Params.episode.url }}" length="{{ .Params.episode.size }}" type="audio/mpeg" />
-      <itunes:author>{{ if .Params.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
-      <itunes:explicit>{{ if .Params.explicit }}Yes{{ else }}No{{ end }}</itunes:explicit>
+      <itunes:author>{{ if .Params.episode.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
+      <itunes:explicit>{{ if .Params.episode.explicit }}Yes{{ else }}No{{ end }}</itunes:explicit>
       <itunes:duration>{{ .Params.episode.duration }}</itunes:duration>
       {{ if .Params.tags }}
       <itunes:keywords>{{ delimit .Params.tags ", " }}</itunes:keywords>
