@@ -17,7 +17,7 @@
       <itunes:name>Eric Fontenot &amp; Russell Hay</itunes:name>
       <itunes:email>russell.hay@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="{{ .Site.Params.coverart }}"/>
+    <itunes:image href="http://batmanslittlebird.com{{ .Site.Params.coverart }}"/>
     <itunes:explicit>No</itunes:explicit>{{ range .Site.Params.category }}
     <itunes:category text="{{ .name }}">{{ if .subcategory }}
       <itunes:category text="{{ .subcategory }}" />

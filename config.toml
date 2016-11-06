@@ -5,7 +5,7 @@ title = "Batman's Little Bird"
 theme = "blb"
 
 [params]
-    coverart = "http://batmanslittlebird.com/images/coverart-temporary.jpg"
+    coverart = "/images/coverart-temporary.jpg"
     subtitle = "A podcast about Dick"
     summary = "A podcast dedicated to the boy wonder, Dick Grayson where we talk about his history, and go through every comic he appears in"
 
