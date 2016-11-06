@@ -1,6 +1,6 @@
 (function() {
   var currentEpisode = null;
-  var audio = null;
+  var player = document.getElementById('player');
 
   function handleClick(element) {
     var id = element.dataset.id;
@@ -17,7 +17,6 @@
 
   function playEpisode(id) {
     stopCurrentEpisode();
-    var player = document.getElementById('player');
     var playButton = document.querySelector('#episode-' + id + ' .play-button');
     var playButtonText = playButton.querySelector('i');
     player.src = playButton.dataset['url'];
@@ -30,7 +29,6 @@
   }
 
   function stopCurrentEpisode() {
-    var player = document.getElementById('player');
     player.pause();
     player.onended = null;
     var playButtonText = document.querySelector('.fa.fa-pause-circle');
@@ -60,4 +58,8 @@
       });
     }
   );
+
+  player.onerror = function () {
+    stopCurrentEpisode();
+  }
 })();
