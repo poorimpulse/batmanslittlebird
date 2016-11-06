@@ -264,10 +264,12 @@ nav.main {
 
 .page {
   margin: 1em; }
-  .page > header {
+  .page > header, .page .body > header {
     margin-bottom: 1.5em; }
-    .page > header > h1 {
+    .page > header > h1, .page .body > header > h1 {
       font-size: 3rem; }
+  .page .body {
+    max-width: 40em; }
   .page audio {
     margin-bottom: 1.5em;
     width: 100%; }
@@ -295,15 +297,16 @@ nav.main {
     font-size: 1rem;
     line-height: 1.5rem; }
 
+.titleUnit {
+  flex: 1;
+  width: 400px;
+  margin-right: 2rem; }
+  .titleUnit img {
+    max-width: 100%; }
+
 #homepageContainer {
   margin-top: 2rem;
   display: flex; }
-  #homepageContainer .titleUnit {
-    flex: 1;
-    max-width: 33%;
-    margin-right: 2rem; }
-    #homepageContainer .titleUnit img {
-      max-width: 100%; }
   #homepageContainer div.episodeList {
     flex: 2; }
   #homepageContainer ul.episodeList {

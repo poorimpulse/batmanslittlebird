@@ -1,11 +1,13 @@
-{{ $.Scratch.Add "ShowTextTitle" true }}
 {{ partial "header" . }}
 <article class="page">
-    <header><h1>{{ .Title }}</h1></header>
-    <audio controls="controls" preload="metadata" src="{{ .Params.episode.url }}"></audio>
+    <div id="homepageContainer">
+    <div class="titleUnit"><img src="{{ $.Site.Params.coverart }}"></div>
     <div class="body">
+        <header><h1>{{ .Title }}</h1></header>
+    <audio controls="controls" preload="metadata" src="{{ .Params.episode.url }}"></audio>
+
     {{ .Content }}
     </div>
-
+    </div>
 </article>
 {{ partial "footer" . }}

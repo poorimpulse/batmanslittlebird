@@ -101,11 +101,15 @@ nav.main {
 
 .page {
   margin: 1em;
-  & > header {
+  & > header, .body > header {
     margin-bottom: 1.5em;
     & > h1 {
       font-size: 3rem;
     }
+  }
+
+  .body {
+    max-width: 40em;
   }
 
   audio {
