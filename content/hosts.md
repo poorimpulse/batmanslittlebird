@@ -7,7 +7,7 @@ weight = -10
 <article class="hosts">
 <section class="hostProfile" id="hostEric">
 <header>
-<img src="http://placehold.it/250x250">
+<img src="/images/eric.jpg">
 <h1>Eric Fontenot</h1>
 </header>
 <article class="description">
