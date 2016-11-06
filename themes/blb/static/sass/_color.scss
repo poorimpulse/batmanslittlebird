@@ -34,3 +34,9 @@ $colors: (
     dark: $black-color
   )
 );
+
+@mixin as-box($color, $backgroundShade) {
+  background: get-color($color, $backgroundShade);
+  border-radius: 2px;
+  box-shadow: inset 0 0 3px 0 darken(get-color($color, $backgroundShade), 5%);
+}
