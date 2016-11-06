@@ -27,7 +27,7 @@ skateboard.</p>
 
 <section class="hostProfile" id="hostRussell">
 <header>
-<img src="http://placehold.it/250x250">
+<img src="/images/russell.jpg">
 <h1>Russell Hay</h1>
 </header>
 <article class="description">
