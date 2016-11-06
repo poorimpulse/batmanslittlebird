@@ -11,17 +11,15 @@ weight = -10
 <h1>Eric Fontenot</h1>
 </header>
 <article class="description">
-<p>Gentrify disrupt kitsch ennui green juice succulents, keytar squid
-sartorial polaroid cornhole. Bicycle rights affogato offal biodiesel,
-art party microdosing asymmetrical jean shorts succulents master cleanse
-tacos. Bushwick flannel health goth normcore, vaporware kale chips
-tousled single-origin coffee vice pinterest. Kogi roof party freegan
-DIY, unicorn vape kitsch aesthetic flannel taxidermy gentrify photo
-booth chicharrones. Whatever poke normcore, meggings kinfolk cronut
-distillery coloring book. Sustainable occupy hella, biodiesel waistcoat
-tumeric plaid DIY bushwick. Mumblecore photo booth ethical tacos
-migas ugh freegan 8-bit poutine synth, lomo aesthetic blog chicharrones
-skateboard.</p>
+<p>Born and raised in Cajun country of South Louisiana, today Eric lives
+and plays in the north suburbs of the DFW metroplex. 
+Growing up, his passion for pop culture and everything comic booky grew
+with him. Batman and the Bat family, especially Dick Grayson, have
+always been at the forefront of his comic book interest, while still
+enjoying the rest of the D.C. Universe, Marvel Comics, and many
+independent publications.  He is a tattoo aficionado, part time
+podcaster, part time consultant, and a full time stay at home dad.</p>  
+<p>You can find him tweeting @<a href="http://twitter.com/ericjfontenot">ericjfontenot</a>.</p>
 </article>
 </section>
 
