@@ -1,9 +1,0 @@
-{{ $.Scratch.Add "ShowTextTitle" true }}
-<article class="episode">
-    <header><h2><a class="episodeLink" data-id="{{ .UniqueID }}" href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <h3 class="releaseDate">{{ .Date.Format "01 Jan 2006" }}</h3></header>
-    <section class="body">
-        <audio controls="controls" preload="metadata"></audio>
-        {{ .Content }}
-    </section>
-</article>

@@ -264,8 +264,13 @@ nav.main {
 
 .page {
   margin: 1em; }
-  .page > header > h1 {
-    font-size: 3rem; }
+  .page > header {
+    margin-bottom: 1.5em; }
+    .page > header > h1 {
+      font-size: 3rem; }
+  .page audio {
+    margin-bottom: 1.5em;
+    width: 100%; }
   .page h2 {
     font-size: 1.5em;
     line-height: 1.5em; }
