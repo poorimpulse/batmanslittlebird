@@ -316,7 +316,8 @@ nav.main {
 
 #homepageContainer {
   margin-top: 2rem;
-  display: flex; }
+  display: flex;
+  flow-flow: row wrap; }
   #homepageContainer div.episodeList {
     flex: 2; }
   #homepageContainer ul.episodeList {
@@ -327,6 +328,12 @@ nav.main {
 
 .active {
   background: #d1d6fd; }
+
+.creditsList {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin-top: 1em; }
 
 .hosts {
   margin-top: 2em;

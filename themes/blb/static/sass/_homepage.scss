@@ -41,6 +41,7 @@
 #homepageContainer {
   margin-top: 2rem;
   display: flex;
+  flow-flow: row wrap;
 
   div.episodeList {
     flex: 2;
@@ -49,6 +50,7 @@
   ul.episodeList {
     margin-top: 2rem;
   }
+
 }
 
 .latest .episode {
@@ -57,4 +59,11 @@
 
 .active {
   background: get-color(primary, light);
+}
+
+.creditsList {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin-top: 1em;
 }
