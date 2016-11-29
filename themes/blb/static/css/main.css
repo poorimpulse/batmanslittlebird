@@ -311,7 +311,8 @@ nav.main {
   width: 400px;
   margin-right: 2rem; }
   .titleUnit img {
-    max-width: 100%; }
+    max-width: 100%;
+    border: 3px solid #24252c; }
 
 #homepageContainer {
   margin-top: 2rem;
