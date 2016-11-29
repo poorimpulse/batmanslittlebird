@@ -6,7 +6,8 @@ theme = "blb"
 copyright = "Copyright 2016-7 Russell Hay &amp; Eric Fontenot"
 
 [params]
-    coverart = "/images/coverart-temporary.jpg"
+    coverart = "/images/coverart.jpg"
+    bannerart = "/images/coverart-small.jpg"
     subtitle = "A podcast about Dick"
     summary = "A podcast dedicated to the boy wonder, Dick Grayson where we talk about his history, and go through every comic he appears in"
 
