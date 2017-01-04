@@ -1,4 +1,4 @@
-<!--{{ $.Scratch.Add "HasAudio" true }}-->
+<!--{{ $.Scratch.Set "HasAudio" true }}-->
 {{ partial "header" . }}
 <div id="homepageContainer">
     <div class="titleUnit"><img src="{{ $.Site.Params.bannerart }}">
@@ -17,7 +17,7 @@
             you listen to your podcasts.</p>
         <ul class="episodeList">
             {{ range $index, $element := (where .Data.Pages.ByDate.Reverse "Type" "episode") }}
-            {{ $.Scratch.Add "HasEpisodes" true }}
+            {{ $.Scratch.Set "HasEpisodes" true }}
             <li
                     class="episodeLink" data-id="{{ $element.UniqueID }}" data-src="{{ $element.Params.episode_url }}"
                     id="episode-{{ $element.UniqueID }}">{{ $element.Render "li" }}</li>
