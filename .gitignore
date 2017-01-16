@@ -3,3 +3,4 @@ public
 node_modules
 deploy_rsa
 deploy_rsa.pub
+.DS_Store
