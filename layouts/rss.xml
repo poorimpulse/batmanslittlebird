@@ -25,14 +25,14 @@
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
-      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | html }}</pubDate>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Params.episode.guid }}</guid>
       <description>
-        {{ .Content | html }}
+        {{ .Content }}
       </description>
       <itunes:summary>
-        {{ .Content | html }}
+        {{ .Content }}
       </itunes:summary>
       <enclosure url="{{ .Params.episode.url }}" length="{{ .Params.episode.size }}" type="audio/mpeg" />
       <itunes:author>{{ if .Params.episode.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
