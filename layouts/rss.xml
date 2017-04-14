@@ -29,10 +29,14 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Params.episode.guid }}</guid>
       <description>
+        {{ `<![CDATA[` | safeHTML }}
         {{ .Content | safeHTML }}
+        ]]>
       </description>
       <itunes:summary>
+        {{ `<![CDATA[` | safeHTML }}
         {{ .Content | safeHTML }}
+        ]]>
       </itunes:summary>
       <enclosure url="{{ .Params.episode.url }}" length="{{ .Params.episode.size }}" type="audio/mpeg" />
       <itunes:author>{{ if .Params.episode.narrator }}{{ .Params.narrator }}{{ else }}{{ .Site.Author.name }}{{ end }}</itunes:author>
