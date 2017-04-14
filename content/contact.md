@@ -23,7 +23,7 @@ couple of ways to contact us either collectively, or individual below.</p></head
 <section class="individualContactList">
 <header><h1>Russell</h1></header>
 <ul class="contactList">
-<li><span class="label">Twitter:</span><a href="http://twitter.com/russellhay">russellhay</a></li>
+<li><span class="label">Twitter:</span><a href="http://twitter.com/pkstainless">pkstainless</a></li>
 <li><span class="label">Blog:</span><a href="http://russellhay.com">russellhay.com</a></li>
 </ul>
 </section>
